@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Sorting_Algorithms
 {
     internal class Program
     {
+        static int delay = 100;  // ms
         static int dataLength = 50;
         static int dataRangeMin = 0;
-        static int dataRangeMax = 100;
+        static int dataRangeMax = 10;
 
         static void Main(string[] args)
         {
@@ -21,10 +23,7 @@ namespace Sorting_Algorithms
             for (int i = 0; i < dataLength; i++)
                 unsorted[i] = rnd.Next(dataRangeMin, dataRangeMax);
 
-            foreach (int val in InsertionSort(unsorted))
-            {
-                Console.WriteLine(val);
-            }
+            InsertionSort(unsorted);
 
             Console.ReadKey();
         }
@@ -44,6 +43,31 @@ namespace Sorting_Algorithms
             }
 
             return true;
+        }
+
+        // display array as vertical bars
+        static void DisplayArr(int[] arr, string name)
+        {
+            // sleep
+            System.Threading.Thread.Sleep(delay);
+
+            // clear console
+            Console.Clear();
+
+            // write name to console
+            Console.WriteLine($"{name}\n");
+
+            for (int i = 0; i < dataRangeMax; i++)      // iterating through from top to bottom, i = how far down
+            { 
+                for (int j = 0; j < arr.Length; j++)  // iterate through each value in array
+                    if (arr[j] >= dataRangeMax - i)  // checks if value at j in array is greater than inverse of i / how far up cursor is
+                       Console.Write("#");          // write # to console if value at j in arr is great enough to be at that point
+                
+                    else                          // else write space
+                        Console.Write(" ");
+                
+                Console.Write("\n");
+            }
         }
 
         static int[] InsertionSort(int[] data, int sortPos = 0)
@@ -69,7 +93,10 @@ namespace Sorting_Algorithms
                     data[i] = valToMove;
                 }
             }
-            
+
+            // display array at current point
+            DisplayArr(data, "Insertion Sort");
+
             // continues to sort, incrementing sortPos until array is sorted
             if (!ArrSorted(data))
                 InsertionSort(data, sortPos + 1);
