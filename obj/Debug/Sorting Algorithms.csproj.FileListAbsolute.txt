@@ -1,0 +1,8 @@
+C:\Dev\C#\Sorting Algorithms\bin\Debug\Sorting Algorithms.exe.config
+C:\Dev\C#\Sorting Algorithms\bin\Debug\Sorting Algorithms.exe
+C:\Dev\C#\Sorting Algorithms\bin\Debug\Sorting Algorithms.pdb
+C:\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.csproj.AssemblyReference.cache
+C:\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.csproj.SuggestedBindingRedirects.cache
+C:\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.csproj.CoreCompileInputs.cache
+C:\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.exe
+C:\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.pdb
