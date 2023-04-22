@@ -18,12 +18,18 @@ namespace Sorting_Algorithms
         {
             Random rnd = new Random();
 
-            // generate array of random values
-            int[] unsorted = new int[dataLength];
-            for (int i = 0; i < dataLength; i++)
-                unsorted[i] = rnd.Next(dataRangeMin, dataRangeMax);
+            // generate equal arrays of random values
+            int[] insertion = new int[dataLength];
+            int[] bubble = new int[dataLength];
 
-            InsertionSort(unsorted);
+            for (int i = 0; i < dataLength; i++)
+            {
+                insertion[i] = rnd.Next(dataRangeMin, dataRangeMax);
+                bubble[i] = rnd.Next(dataRangeMin, dataRangeMax);
+            }
+
+            InsertionSort(insertion);
+            BubbleSort(bubble);
 
             Console.ReadKey();
         }
@@ -70,7 +76,7 @@ namespace Sorting_Algorithms
             }
         }
 
-        static int[] InsertionSort(int[] data, int sortPos = 0)
+        static void InsertionSort(int[] data, int sortPos = 0)
         {
             for (int i = 0; i < sortPos; i++)
             {
@@ -91,17 +97,40 @@ namespace Sorting_Algorithms
 
                     // insert value from sortPos
                     data[i] = valToMove;
+
+                    DisplayArr(data, "Insertion Sort");
                 }
             }
-
-            // display array at current point
-            DisplayArr(data, "Insertion Sort");
 
             // continues to sort, incrementing sortPos until array is sorted
             if (!ArrSorted(data))
                 InsertionSort(data, sortPos + 1);
 
-            return data;
+            return;
+        }
+
+        static void BubbleSort(int[] data)
+        {
+            for (int i = 0; i < dataLength - 1; i++)  // loop through each element in array, except for last
+            {
+                if (data[i] > data[i + 1])  // check if value at i is greater than value in front, if so swaps values
+                {
+                    int valOne = data[i];
+                    int valTwo = data[i + 1];
+
+                    // swap values
+                    data[i] = valTwo; 
+                    data[i + 1] = valOne;
+
+                    DisplayArr(data, "Bubble Sort");
+                }
+            }
+
+            // continues sorting until array is sorted
+            if (!ArrSorted(data))
+                BubbleSort(data);
+
+            return;
         }
     }
 }
