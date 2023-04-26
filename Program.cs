@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Diagnostics;
 
 namespace Sorting_Algorithms
 {
     internal class Program
     {
-        static int delay = 100;  // ms
+        static int delay = 10;  // ms
         static int dataLength = 50;
         static int dataRangeMin = 0;
-        static int dataRangeMax = 10;
+        static int dataRangeMax = 20;
+
+        static bool realTimeVisual = true;
 
         static void Main(string[] args)
         {
@@ -28,8 +31,26 @@ namespace Sorting_Algorithms
                 bubble[i] = rnd.Next(dataRangeMin, dataRangeMax);
             }
 
+            // timers
+            Stopwatch insertionTimer = new Stopwatch();
+            Stopwatch bubbleTimer = new Stopwatch();
+
+            insertionTimer.Start();
             InsertionSort(insertion);
+            insertionTimer.Stop();
+
+            bubbleTimer.Start();
             BubbleSort(bubble);
+            bubbleTimer.Stop();
+
+            // display info
+            Console.Clear();
+            Console.WriteLine($"Iteration Delay: {delay}ms");
+            Console.WriteLine($"Value Range: {dataRangeMin} - {dataRangeMax}");
+            Console.WriteLine($"Real Time Display: {realTimeVisual}");
+            Console.WriteLine($"Array Size: {dataLength}\n");
+            Console.WriteLine($"Insertion Sort Time: {insertionTimer.Elapsed}");
+            Console.WriteLine($"Bubble Sort Time: {bubbleTimer.Elapsed}");
 
             Console.ReadKey();
         }
@@ -98,7 +119,8 @@ namespace Sorting_Algorithms
                     // insert value from sortPos
                     data[i] = valToMove;
 
-                    DisplayArr(data, "Insertion Sort");
+                    if (realTimeVisual)
+                        DisplayArr(data, "Insertion Sort");
                 }
             }
 
@@ -122,7 +144,8 @@ namespace Sorting_Algorithms
                     data[i] = valTwo; 
                     data[i + 1] = valOne;
 
-                    DisplayArr(data, "Bubble Sort");
+                    if (realTimeVisual)
+                        DisplayArr(data, "Bubble Sort");
                 }
             }
 
