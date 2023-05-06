@@ -14,3 +14,11 @@ C:\Users\Jay\Documents\Programming\C#\Sorting Algorithms\obj\Debug\Sorting Algor
 C:\Users\Jay\Documents\Programming\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.csproj.CoreCompileInputs.cache
 C:\Users\Jay\Documents\Programming\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.exe
 C:\Users\Jay\Documents\Programming\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.pdb
+C:\Users\Jay\Documents\Dev\C#\Sorting Algorithms\bin\Debug\Sorting Algorithms.exe.config
+C:\Users\Jay\Documents\Dev\C#\Sorting Algorithms\bin\Debug\Sorting Algorithms.exe
+C:\Users\Jay\Documents\Dev\C#\Sorting Algorithms\bin\Debug\Sorting Algorithms.pdb
+C:\Users\Jay\Documents\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.csproj.AssemblyReference.cache
+C:\Users\Jay\Documents\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jay\Documents\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\Jay\Documents\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.exe
+C:\Users\Jay\Documents\Dev\C#\Sorting Algorithms\obj\Debug\Sorting Algorithms.pdb

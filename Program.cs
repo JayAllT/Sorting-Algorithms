@@ -10,12 +10,10 @@ namespace Sorting_Algorithms
 {
     internal class Program
     {
-        static int delay = 10;  // ms
-        static int dataLength = 50;
+        static int delay = 2;  // ms
+        static int dataLength = 40;
         static int dataRangeMin = 0;
-        static int dataRangeMax = 20;
-
-        static bool realTimeVisual = true;
+        static int dataRangeMax = 10;
 
         static void Main(string[] args)
         {
@@ -31,26 +29,9 @@ namespace Sorting_Algorithms
                 bubble[i] = rnd.Next(dataRangeMin, dataRangeMax);
             }
 
-            // timers
-            Stopwatch insertionTimer = new Stopwatch();
-            Stopwatch bubbleTimer = new Stopwatch();
-
-            insertionTimer.Start();
+            // run algorithms
             InsertionSort(insertion);
-            insertionTimer.Stop();
-
-            bubbleTimer.Start();
             BubbleSort(bubble);
-            bubbleTimer.Stop();
-
-            // display info
-            Console.Clear();
-            Console.WriteLine($"Iteration Delay: {delay}ms");
-            Console.WriteLine($"Value Range: {dataRangeMin} - {dataRangeMax}");
-            Console.WriteLine($"Real Time Display: {realTimeVisual}");
-            Console.WriteLine($"Array Size: {dataLength}\n");
-            Console.WriteLine($"Insertion Sort Time: {insertionTimer.Elapsed}");
-            Console.WriteLine($"Bubble Sort Time: {bubbleTimer.Elapsed}");
 
             Console.ReadKey();
         }
@@ -119,8 +100,7 @@ namespace Sorting_Algorithms
                     // insert value from sortPos
                     data[i] = valToMove;
 
-                    if (realTimeVisual)
-                        DisplayArr(data, "Insertion Sort");
+                    DisplayArr(data, "Insertion Sort");
                 }
             }
 
@@ -144,8 +124,7 @@ namespace Sorting_Algorithms
                     data[i] = valTwo; 
                     data[i + 1] = valOne;
 
-                    if (realTimeVisual)
-                        DisplayArr(data, "Bubble Sort");
+                    DisplayArr(data, "Bubble Sort");
                 }
             }
 
